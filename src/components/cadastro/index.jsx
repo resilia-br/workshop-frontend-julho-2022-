@@ -1,9 +1,19 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './index.css';
+
+import {HiEye, HiEyeOff} from "react-icons/hi"
 
 export const Singnup = ({setAccount}) => {
 
   const form = useRef();
+
+  const [cpf, setCpf] = useState("")
+  const [show, setShow] = useState("")
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    setShow(!show)
+  }
 
   const validate = (input) => {
     if (!input) throw Error('Input invalido');
@@ -43,7 +53,19 @@ export const Singnup = ({setAccount}) => {
               <input type="text" name='name' className='name' placeholder='Nome completo' required />
             </label>
             <label className='label'>
-              <input type="number" name='cpf' className='cpf' placeholder='CPF' required maxLength={11} />
+            <div className="login-eye">
+                {show ? (
+                  <HiEye
+                    size={20}
+                    onClick={handleClick}
+                    />
+                ) : (
+                  <HiEyeOff
+                    size={20}
+                    onClick={handleClick}/>
+                )}
+              </div>
+              <input type={show ? "number" : "password"} name='cpf' value={cpf} onChange={e => setCpf(e.target.value)} className='cpf' placeholder='CPF' required maxLength={11} />
             </label>
             <input type="submit" value="Enviar" className='submit-signup' />
           </form>
