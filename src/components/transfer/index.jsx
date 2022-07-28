@@ -1,15 +1,17 @@
-import { useRef, useCallback, useEffect } from 'react';
+import { useRef, useCallback, useEffect, useState } from 'react';
 import React from 'react';
 import './index.css';
 
 export const Transfer = ({setTransaction, transaction}) => {
 
   const form = useRef();
+  const [valor, setValor] = useState(0)
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     const increment = parseInt(transaction + 1);
-
     setTransaction(increment);
+    setValor(0)
   };
 
     return (
@@ -27,7 +29,7 @@ export const Transfer = ({setTransaction, transaction}) => {
               <p></p>
             </label>
             <label className='label'>
-              <input type="text" className='amount' placeholder='Valor' />
+              <input type="text" className='amount' value={valor} onChange={e => setValor(e.target.value)} placeholder='Valor' />
             </label>
             <input type="submit" value="Transferir" className='submit-transfer' />
             <p className='text-highlight'>*Suas transferências serāo apenas para contas cadastradas.</p>
