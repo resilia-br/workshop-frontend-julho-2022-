@@ -20,3 +20,9 @@
     color: #16382A;
     font-weight: bold;
   }
+
+  @media(max-width:768px) {
+    .submit-signup {
+      margin: 0 auto;
+    }
+  }
