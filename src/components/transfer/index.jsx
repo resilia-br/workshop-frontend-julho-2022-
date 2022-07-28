@@ -15,7 +15,6 @@ export const Transfer = ({setTransaction, transaction}) => {
     return (
       <>
          <div className="transfer">
-          {/* <h1>Melhoria</h1> */}
           <h3>Nova Transaçāo</h3>
           <form className='form' ref={form} onSubmit={handleSubmit}>
             <label className='label'>
@@ -24,7 +23,6 @@ export const Transfer = ({setTransaction, transaction}) => {
                 <option value="0002">Daniel Rocha</option>
                 <option value="0003">Karol Harumi</option>
               </select>
-              <p></p>
             </label>
             <label className='label'>
               <input type="text" className='amount' placeholder='Valor' />

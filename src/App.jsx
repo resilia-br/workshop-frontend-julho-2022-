@@ -29,7 +29,6 @@ function App() {
             : <Singnup setAccount={setAccount} /> 
           }
       </main>
-      <div>teste</div>
       <footer>Resilia Bank 2022</footer>
     </div>
   );

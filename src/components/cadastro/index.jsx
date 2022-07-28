@@ -37,7 +37,7 @@ export const Singnup = ({setAccount}) => {
   return (
     <>
       <div className="signup">
-          <h3>Nova conta <span></span></h3>
+          <h3>Nova conta</h3>
           <form className='form' ref={form} onSubmit={handleSubmit}>
             <label className='label'>
               <input type="text" name='name' className='name' placeholder='Nome completo' required />
