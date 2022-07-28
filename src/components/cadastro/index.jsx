@@ -1,16 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './index.css';
 
-export const Singnup = ({setAccount}) => {
-
+export const Singnup = ({setAccount, nome, setNome}) => {
   const form = useRef();
+  const [name, setName] = useState(nome)
+
 
   const validate = (input) => {
     if (!input) throw Error('Input invalido');
   }
   
-  const serialize = () => {
-  
+   const serialize = () => {
     //converte a lista de inputs para um array
     const inputs = [...form.current.elements]; 
 
@@ -18,7 +18,6 @@ export const Singnup = ({setAccount}) => {
     inputs.filter(input => {
       if (input.type === 'text' || input.type === 'number') {
         validate(input.value);
-        
         data[input.name] = input.value;
       }
     });
@@ -28,11 +27,13 @@ export const Singnup = ({setAccount}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const data = serialize();
-
     setAccount(true);
   };
+
+  const changeName = (e) => {
+    setName(setNome(e.target.value))
+  }
 
   return (
     <>
@@ -40,7 +41,7 @@ export const Singnup = ({setAccount}) => {
           <h3>Nova conta <span></span></h3>
           <form className='form' ref={form} onSubmit={handleSubmit}>
             <label className='label'>
-              <input type="text" name='name' className='name' placeholder='Nome completo' required />
+              <input type="text" name='name' onChange={changeName} className='name' placeholder='Nome completo' required />
             </label>
             <label className='label'>
               <input type="number" name='cpf' className='cpf' placeholder='CPF' required maxLength={11} />

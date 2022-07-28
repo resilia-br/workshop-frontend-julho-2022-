@@ -1,21 +1,24 @@
 import { useRef, useCallback, useEffect } from 'react';
 import React from 'react';
 import './index.css';
+import { Singnup } from '../cadastro';
 
-export const Transfer = ({setTransaction, transaction}) => {
+
+
+export const Transfer = ({setTransaction, transaction, nome}) => {
 
   const form = useRef();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     const increment = parseInt(transaction + 1);
-
     setTransaction(increment);
   };
 
     return (
       <>
          <div className="transfer">
-          {/* <h1>Melhoria</h1> */}
+          <h1>{nome}</h1>
           <h3>Nova Transaçāo</h3>
           <form className='form' ref={form} onSubmit={handleSubmit}>
             <label className='label'>
