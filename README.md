@@ -45,4 +45,5 @@ Compila o aplicativo para produção na pasta `build`.\
 
 ```
 /src              #diretorio principal
+/dependencias atualizadas 
 ```
