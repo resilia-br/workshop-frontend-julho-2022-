@@ -16,7 +16,6 @@ export const Balance = ({transaction, balance}) => {
                 <h3>Saldo</h3>
                 <span className="counter">R$ {balance}</span>
                 <span className='last-transactions'>ver últimas transacoes</span>
-                {/* <p>ver mais</p> */}
               </li>
             </ul>
           </div> 

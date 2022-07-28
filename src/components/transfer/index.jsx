@@ -15,7 +15,6 @@ export const Transfer = ({setTransaction, transaction}) => {
     return (
       <>
          <div className="transfer">
-          {/* <h1>Melhoria</h1> */}
           <h3>Nova Transaçāo</h3>
           <form className='form' ref={form} onSubmit={handleSubmit}>
             <label className='label'>
