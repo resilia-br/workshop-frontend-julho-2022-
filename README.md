@@ -42,3 +42,7 @@ Executa os testes de modo iterativo\
 
 Compila o aplicativo para produção na pasta `build`.\
 [Executa o build](https://facebook.github.io/create-react-app/docs/deployment)
+
+```
+/src              #diretorio principal
+```
