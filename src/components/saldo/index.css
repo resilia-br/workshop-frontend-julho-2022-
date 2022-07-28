@@ -1,0 +1,47 @@
+.balance {
+    border-radius: 4px;
+    width: 600px;
+    height: 200px;
+    background-color: #2D2E37;
+    color: #fff;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  
+  .balance ul {
+    list-style: none;
+    display: flex;
+    background-color: #131519;
+    margin-top: 20px;
+    height: 120px;
+    border-radius: 4px;
+    padding: 7px;
+  }
+  
+  .balance li { 
+    width: 50%;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .balance li.active { 
+    background-color: #1C1D21;
+  }
+  .balance li h3 {
+    font-size: 12px;
+    font-weight: 200;
+  }
+  .balance .counter {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  .balance .last-transactions {
+    color: #63DA9E;
+    font-size: 11px;
+    display: block;
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
